@@ -1,0 +1,232 @@
+:root {
+	--primary-color: #ffc40c;
+
+	--primary-text-color: white;
+
+	--primary-bg-color: #000000;
+	--primary-transparent-bg-color: rgba(0, 0, 0, 0.5);
+	--secondary-bg-color: #000000;
+	--tertiary-bg-color: #1b1b1b;
+
+	--success-color: #09ff00;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	overflow: hidden;
+	background-color: var(--primary-bg-color);
+}
+
+.top-bar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: var(--secondary-bg-color);
+	padding: 10px;
+	z-index: 1;
+}
+
+.base-button {
+	color: var(--primary-color);
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	position: relative;
+	width: 100%;
+	background-color: var(--primary-bg-color);
+}
+
+.content__drawing-area {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.content__instruction-text {
+	position: absolute;
+	display: inline;
+	top: 60px;
+	left: 30px;
+	font-size: 20px;
+	color: var(--primary-text-color);
+	padding-right: 6rem;
+}
+
+.content__instruction-text--hidden {
+	display: none;
+}
+
+.bottom-bar {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	background-color: var(--secondary-bg-color);
+	padding: 10px 20px;
+	z-index: 2;
+}
+
+.bottom-bar__predict-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottom-bar__clear-button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.hidden-placeholder {
+	visibility: hidden;
+}
+
+.result-drawer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	background-color: var(--primary-transparent-bg-color);
+	z-index: 3;
+	display: none;
+}
+
+.result-drawer__container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-top: 0.5rem;
+	color: var(--primary-text-color);
+	height: calc(33.33vh);
+	background-color: var(--tertiary-bg-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.result-drawer__handler {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 4rem;
+	height: 0.5rem;
+	background-color: var(--primary-bg-color);
+	border-radius: 2rem;
+	border: none;
+}
+
+.result-drawer__prediction-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 1.2rem;
+	height: 100%;
+	padding: 1.4rem;
+}
+
+.prediction-icon__animation {
+	animation: glowing 1.2s infinite;
+}
+
+@keyframes glowing {
+	0% {
+		filter: drop-shadow(0 0 5px var(--primary-color));
+	}
+	50% {
+		filter: drop-shadow(0 0 20px var(--primary-color));
+	}
+	100% {
+		filter: drop-shadow(0 0 5px var(--primary-color));
+	}
+}
+
+.result-drawer__prediction-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	background-color: var(--primary-bg-color);
+	border-radius: 50%;
+}
+
+.result-drawer__prediction-text {
+	color: var(--primary-text-color);
+	font-size: 1.4rem;
+	text-align: center;
+	user-select: none;
+}
+
+.result-drawer__probability-text {
+	color: var(--primary-text-color);
+	font-size: 0.8rem;
+	text-align: center;
+	user-select: none;
+}
+
+.result-drawer__probability-text--hidden {
+	display: none;
+}
+
+.result-drawer__probability-percentage {
+	color: var(--success-color);
+}
+
+.result-drawer__close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: var(--primary-text-color);
+	text-decoration: none;
+	z-index: 1;
+}
+
+.about-container {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	background-color: var(--tertiary-bg-color);
+	z-index: 3;
+	display: none;
+}
+
+.about-container__content {
+	position: relative;
+	padding: 20px;
+	color: var(--primary-text-color);
+}
+
+.about-container__close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: var(--primary-text-color);
+	text-decoration: none;
+	z-index: 1;
+}

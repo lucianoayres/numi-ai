@@ -1,0 +1,46 @@
+/* Modern CSS Reset */
+
+/* Box sizing border-box for all elements */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* Remove list styles (bullet points) */
+ol,
+ul {
+	list-style: none;
+}
+
+/* Set default font family and size */
+body {
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+}
+
+/* Remove default link styles */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Remove outline on focused elements */
+*:focus {
+	outline: none;
+}

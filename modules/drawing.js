@@ -15,12 +15,12 @@ import {
 	updateResult,
 } from './utils.js'
 
-let isCanvasEmpty = true
-
 // Set the initial position for drawing
 let isDrawing = false
 let lastX = 0
 let lastY = 0
+
+let previousDrawingImage = null
 
 // Get the drawing area element
 const drawingArea = document.querySelector(DRAWING_AREA_CLASS)
@@ -53,13 +53,27 @@ function resizeCanvasToWindow(element) {
 	element.height = window.innerHeight
 }
 
+function isCanvasEmpty(canvas) {
+	const context = canvas.getContext('2d')
+	const imageData = context.getImageData(0, 0, canvas.width, canvas.height)
+	const pixels = imageData.data
+
+	for (let i = 0; i < pixels.length; i += 4) {
+		const alpha = pixels[i + 3]
+		if (alpha !== 0) {
+			return false
+		}
+	}
+
+	return true
+}
+
 // Function to start drawing
 function startDrawing(e) {
 	enableDrawingMode()
 
-	if (isCanvasEmpty) {
+	if (isCanvasEmpty(drawingArea)) {
 		hideInstructionsText()
-		isCanvasEmpty = false
 	}
 
 	;[lastX, lastY] = [getCurrentX(e), getCurrentY(e)]
@@ -100,6 +114,11 @@ function disableDrawingMode() {
 	isDrawing = false
 }
 
+function hasCanvasDrawingChanged(image, referenceImage) {
+	if (!referenceImage) return true
+	return image.src !== referenceImage.src
+}
+
 // Function to stop drawing
 function stopDrawing() {
 	disableDrawingMode()
@@ -108,22 +127,24 @@ function stopDrawing() {
 	const drawingImage = new Image()
 	drawingImage.src = getDrawingCanvas(drawingArea).toDataURL()
 
-	setLoadingPredictionText()
+	if (hasCanvasDrawingChanged(drawingImage, previousDrawingImage)) {
+		setLoadingPredictionText()
 
-	if (!isCanvasEmpty) {
-		convertCanvasToImage(drawingImage.src)
-			.then(async (convertedImage) => {
-				if (isCanvasEmpty) return
+		if (!isCanvasEmpty(drawingArea)) {
+			convertCanvasToImage(drawingImage.src)
+				.then(async (convertedImage) => {
+					// if (isCanvasEmpty(drawingArea)) return
 
-				const result = await getPredictionResult(convertedImage)
-
-				updateResult(result.index, result.probability)
-			})
-			.catch((error) => {
-				console.error(error)
-			})
-	} else {
-		setDefaultPredictionText()
+					const result = await getPredictionResult(convertedImage)
+					updateResult(result.index, result.probability)
+					previousDrawingImage = drawingImage
+				})
+				.catch((error) => {
+					console.error(error)
+				})
+		} else {
+			setDefaultPredictionText()
+		}
 	}
 }
 
@@ -233,5 +254,4 @@ clearCanvasButton.addEventListener('click', clearCanvas)
 function clearCanvas() {
 	context.clearRect(0, 0, drawingArea.width, drawingArea.height)
 	setDefaultPredictionText()
-	isCanvasEmpty = true
 }

@@ -36,7 +36,6 @@ export const PREDICTION_PROBABILITY_PERCENTAGE_TEXT_CLASS =
 
 export const PREDICT_BUTTON_CLASS = '.bottom-bar__predict-button'
 export const RESULT_CONTAINER_CLASS = '.result-drawer'
-export const RESULT_HANDLER_CLASS = '.result-drawer__handler'
 export const PREDICTION_ICON_CLASS = '.prediction-icon'
 export const PREDICTION_ICON_ANIMATION_CLASS = '.prediction-icon__animation'
 

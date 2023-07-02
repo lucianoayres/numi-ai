@@ -38,7 +38,7 @@ drawingArea.addEventListener('touchstart', startDrawing, { passive: true })
 drawingArea.addEventListener('touchmove', touchMoveHandler, { passive: false })
 drawingArea.addEventListener('touchend', stopDrawing)
 
-drawingArea.addEventListener('mouseleave', stopDrawing)
+drawingArea.addEventListener('mouseleave', disableDrawingMode)
 
 // Attach the function to the 'resize' event of the window
 window.addEventListener('resize', windowResizeHandler)
@@ -55,7 +55,7 @@ function resizeCanvasToWindow(element) {
 
 // Function to start drawing
 function startDrawing(e) {
-	isDrawing = true
+	enableDrawingMode()
 
 	if (isCanvasEmpty) {
 		hideInstructionsText()
@@ -92,9 +92,17 @@ function getCurrentY(e) {
 	return e.offsetY || e.touches[0].clientY
 }
 
+function enableDrawingMode() {
+	isDrawing = true
+}
+
+function disableDrawingMode() {
+	isDrawing = false
+}
+
 // Function to stop drawing
 function stopDrawing() {
-	isDrawing = false
+	disableDrawingMode()
 
 	// Save the drawing as an Image object
 	const drawingImage = new Image()

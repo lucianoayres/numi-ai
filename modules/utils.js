@@ -31,6 +31,7 @@ export function updateResult(number, probability) {
 	showProbabilityText()
 	probabilityText.innerText = formatProbabilityToPercentage(probability)
 	showPredictionIconAnimation()
+	console.log('update result')
 }
 
 export function closeResultContainer(elementClass = RESULT_CONTAINER_CLASS) {

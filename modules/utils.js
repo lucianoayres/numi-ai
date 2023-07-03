@@ -5,6 +5,7 @@ import {
 	PREDICTION_PROBABILITY_TEXT_CLASS,
 	PREDICTION_PROBABILITY_PERCENTAGE_TEXT_CLASS,
 	PREDICTION_PROBABILITY_HIDDEN_TEXT_CLASS,
+	PROBABILITY_THRESHOLD,
 	PREDICTION_ICON_CLASS,
 	PREDICTION_ICON_ANIMATION_CLASS,
 	DEFAULT_MESSAGE_PREDICTION_TEXT,
@@ -23,15 +24,42 @@ export * from './drawing.js'
 
 export function updateResult(number, probability) {
 	const resultText = document.querySelector(PREDICTION_RESULT_TEXT_CLASS)
+
+	resultText.innerText = generateResultMessage(number)
+	updateProbabilityText(probability)
+
+	showPredictionIconAnimation()
+}
+
+function updateProbabilityText(probability) {
 	const probabilityText = document.querySelector(
 		PREDICTION_PROBABILITY_PERCENTAGE_TEXT_CLASS
 	)
-
-	resultText.innerText = generateResultMessage(number)
 	showProbabilityText()
+	styleProbabilityText(probabilityText, probability)
 	probabilityText.innerText = formatProbabilityToPercentage(probability)
-	showPredictionIconAnimation()
-	console.log('update result')
+}
+
+function styleProbabilityText(element, probability) {
+	let grade = ''
+
+	if (probability >= PROBABILITY_THRESHOLD.HIGH.value) {
+		grade = PROBABILITY_THRESHOLD.HIGH.label
+	} else if (probability >= PROBABILITY_THRESHOLD.MEDIUM.value) {
+		grade = PROBABILITY_THRESHOLD.MEDIUM.label
+	} else {
+		grade = PROBABILITY_THRESHOLD.LOW.label
+	}
+
+	const formattedClassName =
+		PREDICTION_PROBABILITY_PERCENTAGE_TEXT_CLASS.substring(1)
+	element.classList.remove(
+		`${formattedClassName}--high`,
+		`${formattedClassName}--medium`,
+		`${formattedClassName}--low`
+	)
+
+	element.classList.add(`${formattedClassName}--${grade}`)
 }
 
 export function closeResultContainer(elementClass = RESULT_CONTAINER_CLASS) {

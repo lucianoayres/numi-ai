@@ -6,6 +6,25 @@ export const STROKE_STYLE = '#FFFFFF'
 export const LINE_CAP_STYLE = 'round'
 export const LINE_WIDTH = 44 //64
 
+// Probability text grade threshold
+export const PROBABILITY_THRESHOLD_HIGH = 0.7
+export const PROBABILITY_THRESHOLD_MEDIUM = 0.5
+
+export const PROBABILITY_THRESHOLD = {
+	HIGH: {
+		label: 'high',
+		value: 0.6,
+	},
+	MEDIUM: {
+		label: 'medium',
+		value: 0.4,
+	},
+	LOW: {
+		label: 'low',
+		value: 0.3,
+	},
+}
+
 // Set up exported image offset
 
 export const EXPORTED_IMAGE_PADDING = 100

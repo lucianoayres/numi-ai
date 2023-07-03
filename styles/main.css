@@ -8,7 +8,9 @@
 	--secondary-bg-color: #000000;
 	--tertiary-bg-color: #1b1b1b;
 
-	--success-color: #09ff00;
+	--high-color: #09ff00;
+	--medium-color: #ffc40c;
+	--low-color: #ff3c3c;
 }
 
 body {
@@ -193,7 +195,19 @@ body {
 }
 
 .result-drawer__probability-percentage {
-	color: var(--success-color);
+	font-weight: 600;
+}
+
+.result-drawer__probability-percentage--high {
+	color: var(--high-color);
+}
+
+.result-drawer__probability-percentage--medium {
+	color: var(--medium-color);
+}
+
+.result-drawer__probability-percentage--low {
+	color: var(--low-color);
 }
 
 .result-drawer__close-button {

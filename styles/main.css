@@ -230,10 +230,27 @@ body {
 	display: none;
 }
 
-.about-container__content {
+.about-container__header {
 	position: relative;
-	padding: 20px;
 	color: var(--primary-text-color);
+}
+
+.about-container__content {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0 1rem;
+	height: 100%;
+}
+
+.about-container__text-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.about-container__github-button {
 }
 
 .about-container__close-button {

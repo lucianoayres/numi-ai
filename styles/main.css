@@ -45,6 +45,7 @@ body {
 	gap: 0.4rem;
 	justify-content: center;
 	align-items: center;
+	user-select: none;
 }
 
 .content {

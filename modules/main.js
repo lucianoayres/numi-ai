@@ -5,6 +5,8 @@ import {
 	MENU_BUTTON_CLASS,
 	ABOUT_CONTAINER_CLASS,
 	ABOUT_CLOSE_BUTTON_CLASS,
+	GITHUB_BUTTON_CLASS,
+	GITHUB_LINK,
 } from './constants.js'
 
 import {
@@ -21,6 +23,7 @@ const resultContainer = document.querySelector(RESULT_CONTAINER_CLASS)
 const menuButton = document.querySelector(MENU_BUTTON_CLASS)
 const aboutContainer = document.querySelector(ABOUT_CONTAINER_CLASS)
 const aboutCloseButton = document.querySelector(ABOUT_CLOSE_BUTTON_CLASS)
+const gitHubButton = document.querySelector(GITHUB_BUTTON_CLASS)
 
 function init() {
 	resultButton.addEventListener('click', handleResultButtonClick)
@@ -28,6 +31,7 @@ function init() {
 
 	menuButton.addEventListener('click', handleMenuButtonClick)
 	aboutCloseButton.addEventListener('click', handleAboutCloseButtonClick)
+	gitHubButton.addEventListener('click', handleGitHubButton)
 
 	resultContainer.addEventListener('mousedown', handleMouseDown, false)
 	resultContainer.addEventListener('mouseup', handleMouseUp, false)
@@ -36,6 +40,10 @@ function init() {
 
 	setInstructionsText(INSTRUCTIONS_TEXT)
 	setDefaultPredictionText()
+}
+
+function handleGitHubButton() {
+	window.open(GITHUB_LINK)
 }
 
 function handleResultButtonClick(e) {

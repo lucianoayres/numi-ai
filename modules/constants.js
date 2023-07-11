@@ -1,6 +1,10 @@
 // Model path for classifier
 export const MODEL_PATH = './converted-model/model.json'
 
+// Project GitHub link
+export const GITHUB_BUTTON_CLASS = '.about-container__github-button'
+export const GITHUB_LINK = 'https://github.com/lucianoayres'
+
 // Set up drawing style constants
 export const STROKE_STYLE = '#FFFFFF'
 export const LINE_CAP_STYLE = 'round'

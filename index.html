@@ -12,7 +12,7 @@
 		<script type="module" src="./modules/main.js"></script>
 		<script type="module" src="./modules/drawing.js"></script>
 	</head>
-	<body>
+	<body class="wrapper">
 		<header class="top-bar">
 			<nav class="top-bar__nav">
 				<button class="top-bar__menu-button base-button">
@@ -203,23 +203,36 @@
 						This is the about content. This is the about content. This is the
 						about content. This is the about content. This is the about content.
 						This is the about content. This is the about content. This is the
-						about content. This is the about content. This is the about content.
-						This is the about content. This is the about content. This is the
-						about content. This is the about content. This is the about content.
-						This is the about content. This is the about content. This is the
-						about content. This is the about content. This is the about content.
-						This is the about content. This is the about content. This is the
-						about content. This is the about content. This is the about content.
-						This is the about content. This is the about content. This is the
-						about content. This is the about content. This is the about content.
-						This is the about content. This is the about content. This is the
-						about content. This is the about content. This is the about content.
-						This is the about content. This is the about content. This is the
-						about content. This is the about content. This is the about content.
-						This is the about content. This is the about content.
+						about content. This is the
+						<a class="about-link" href="#">about</a> content. This is the about
+						content. This is the about content. This is the about content. This
+						is the about content. This is the about content. This is the about
+						content. This is the about content. This is the about content. This
+						is the about content. This is the about content. This is the about
+						content. This is the about content. This is the about content. This
+						is the about content. This is the about content. This is the about
+						content. This is the about content. This is the about content. This
+						is the about content. This is the about content. This is the about
+						content. This is the about content. This is the about content. This
+						is the about content. This is the about content. This is the about
+						content. This is the about content. This is the about content. This
+						is the about content. This is the about content. This is the about
+						content. This is the about content. This is the about content.
 					</p>
 				</div>
-				<button class="about-container__github-button">
+				<button class="about-container__github-button base-button">
+					<svg
+						width="37"
+						height="37"
+						viewBox="0 0 37 37"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M12.3756 29.048C12.3756 29.1972 12.204 29.3165 11.9877 29.3165C11.7415 29.3389 11.57 29.2196 11.57 29.048C11.57 28.8988 11.7415 28.7794 11.9579 28.7794C12.1817 28.7571 12.3756 28.8764 12.3756 29.048ZM10.0556 28.7123C10.0034 28.8615 10.1526 29.0331 10.3764 29.0778C10.5704 29.1524 10.7942 29.0778 10.8389 28.9286C10.8837 28.7794 10.7419 28.6079 10.5181 28.5407C10.3242 28.4885 10.1079 28.5631 10.0556 28.7123ZM13.3528 28.5855C13.1365 28.6377 12.9873 28.7794 13.0097 28.951C13.0321 29.1002 13.226 29.1972 13.4498 29.145C13.6661 29.0927 13.8153 28.951 13.7929 28.8018C13.7706 28.6601 13.5692 28.5631 13.3528 28.5855ZM18.2613 0C7.91472 0 0 7.85504 0 18.2016C0 26.4744 5.20686 33.5536 12.6442 36.0452C13.599 36.2167 13.9347 35.6274 13.9347 35.1425C13.9347 34.68 13.9123 32.1288 13.9123 30.5623C13.9123 30.5623 8.69052 31.6813 7.59395 28.3393C7.59395 28.3393 6.74355 26.1685 5.52016 25.6091C5.52016 25.6091 3.8119 24.4379 5.63952 24.4603C5.63952 24.4603 7.49698 24.6095 8.51895 26.3849C10.1526 29.2643 12.8903 28.4363 13.9571 27.944C14.1286 26.7504 14.6135 25.9224 15.1506 25.43C10.9806 24.9675 6.77339 24.3633 6.77339 17.1871C6.77339 15.1357 7.34032 14.1063 8.53387 12.7933C8.33992 12.3085 7.70585 10.3093 8.72782 7.72823C10.2869 7.24335 13.875 9.74234 13.875 9.74234C15.3669 9.3246 16.9708 9.10827 18.5597 9.10827C20.1486 9.10827 21.7524 9.3246 23.2444 9.74234C23.2444 9.74234 26.8325 7.23589 28.3915 7.72823C29.4135 10.3167 28.7794 12.3085 28.5855 12.7933C29.779 14.1137 30.5101 15.1431 30.5101 17.1871C30.5101 24.3857 26.1163 24.9601 21.9464 25.43C22.6327 26.0194 23.2145 27.1383 23.2145 28.8913C23.2145 31.4052 23.1921 34.5159 23.1921 35.1276C23.1921 35.6125 23.5353 36.2018 24.4827 36.0302C31.9423 33.5536 37 26.4744 37 18.2016C37 7.85504 28.6079 0 18.2613 0ZM7.25081 25.7284C7.15383 25.803 7.17621 25.9746 7.30302 26.1163C7.42238 26.2357 7.59395 26.2879 7.69093 26.1909C7.7879 26.1163 7.76552 25.9448 7.63871 25.803C7.51936 25.6837 7.34778 25.6315 7.25081 25.7284ZM6.44516 25.1242C6.39294 25.2212 6.46754 25.3405 6.61673 25.4151C6.73609 25.4897 6.88528 25.4673 6.9375 25.3629C6.98972 25.2659 6.91512 25.1466 6.76593 25.072C6.61673 25.0272 6.49738 25.0496 6.44516 25.1242ZM8.8621 27.7798C8.74274 27.8768 8.7875 28.1006 8.95907 28.2423C9.13065 28.4139 9.34698 28.4363 9.44395 28.3169C9.54093 28.22 9.49617 27.9962 9.34698 27.8544C9.18286 27.6829 8.95907 27.6605 8.8621 27.7798ZM8.01169 26.6833C7.89234 26.7579 7.89234 26.9518 8.01169 27.1234C8.13105 27.295 8.33246 27.3696 8.42944 27.295C8.54879 27.198 8.54879 27.004 8.42944 26.8325C8.325 26.6609 8.13105 26.5863 8.01169 26.6833Z"
+							fill="white"
+						/>
+					</svg>
 					View the Source Code on GitHub
 				</button>
 			</div>

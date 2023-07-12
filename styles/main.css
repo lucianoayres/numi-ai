@@ -286,3 +286,44 @@
 	text-decoration: none;
 	z-index: 1;
 }
+
+@media screen and (min-width: 1024px) {
+	.about-container {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		height: 100%;
+		background-color: var(--tertiary-bg-color);
+		z-index: 3;
+		display: none;
+	}
+
+	.about-container__content {
+		color: white;
+		display: flex;
+		gap: 2rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2.4rem 1.4rem 1.4rem;
+		height: 100%;
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	.about-container__github-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		gap: 0.64rem;
+		font-size: 0.94rem;
+
+		height: 3.8rem;
+		color: var(--primary-text-color);
+		background-color: var(--primary-bg-color);
+		border-radius: 0.5rem;
+		padding: 0 2rem;
+	}
+}

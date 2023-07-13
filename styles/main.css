@@ -250,15 +250,13 @@
 }
 
 .about-logo {
-	display: block;
-	max-width: 100%;
-	height: auto;
 }
 
 .about-container__text-content {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	padding-top: 1rem;
 }
 
 .about-title {

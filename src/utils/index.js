@@ -16,11 +16,12 @@ import {
 	CANVAS_FONT_COLOR,
 	CANVAS_X_POSITION,
 	CANVAS_Y_POSITION,
-} from './constants.js'
+	RESULT_PHRASES,
+} from '../constants/index.js'
 
-export * from './classifier.js'
+export * from '../modules/classifier.js'
 
-export * from './drawing.js'
+export * from '../modules/drawing.js'
 
 export function updateResult(number, probability) {
 	const resultText = document.querySelector(PREDICTION_RESULT_TEXT_CLASS)
@@ -182,71 +183,9 @@ export function isMobileDevice() {
 	return mediaQuery.matches
 }
 
-function generateResultMessage(number) {
-	const phrases = [
-		`Hooray! The number is ${number}!`,
-		`Wowza! We've got ${number}!`,
-		`Drumroll, please! The chosen number is ${number}!`,
-		`Hold your breath... it's ${number}!`,
-		`Incredible! We've got ourselves a ${number}!`,
-		`Behold! The magic number is ${number}!`,
-		`Guess what? It's none other than ${number}!`,
-		`Ta-da! Feast your eyes on ${number}!`,
-		`Eureka! We've uncovered ${number}!`,
-		`Unbelievable! The number ${number} has been revealed!`,
-		`Bingo! It's ${number}!`,
-		`Abracadabra! Watch out for ${number}!`,
-		`No way! We've got ${number}!`,
-		`Hold onto your hats, it's ${number}!`,
-		`By George, it's ${number}!`,
-		`Look what we found... ${number}!`,
-		`You won't believe it, but it's ${number}!`,
-		`Prepare to be amazed... it's ${number}!`,
-		`Voilà! Behold ${number}!`,
-		`Can you believe your luck? It's ${number}!`,
-		`Drumroll, please... ${number}!`,
-		`It's like magic, ${number} has appeared!`,
-		`Get ready for a surprise... ${number}!`,
-		`Hold onto your socks, it's ${number}!`,
-		`Well, well, well... ${number} it is!`,
-		`You guessed it right, it's ${number}!`,
-		`Brace yourself... ${number}!`,
-		`Check this out, it's ${number}!`,
-		`Who would've thought? It's ${number}!`,
-		`Stop the presses, it's ${number}!`,
-		`We've hit the jackpot with ${number}!`,
-		`Guess what? It's a smashing ${number}!`,
-		`We're in luck, it's ${number}!`,
-		`Hold your horses, it's ${number}!`,
-		`Incredible! We've got ${number} in our hands!`,
-		`Goodness gracious, it's ${number}!`,
-		`Hip hip hooray, it's ${number}!`,
-		`Ladies and gentlemen, presenting ${number}!`,
-		`A round of applause for ${number}!`,
-		`It's official, it's ${number}!`,
-		`Fantastic news, it's ${number}!`,
-		`Oh yeah, it's ${number}!`,
-		`Check it out: ${number}!`,
-		`Whoa! We hit ${number}!`,
-		`No kidding, it's ${number}!`,
-		`Boom! ${number} is here!`,
-		`Look here, it's ${number}!`,
-		`We struck gold, it's ${number}!`,
-		`Oh my, it's ${number}!`,
-		`Jump for joy, it's ${number}!`,
-		`Lucky us, it's ${number}!`,
-		`We've got the prize: ${number}!`,
-		`Oh snap, it's ${number}!`,
-		`Step aside, it's ${number}!`,
-		`Oh baby, ${number} is here!`,
-		`Incredible news, it's ${number}!`,
-		`Yahoo! ${number} is the one!`,
-		`Hey hey! We've got ${number}!`,
-		`Woo-hoo! It's ${number}!`,
-		`Giddy up, it's ${number}!`,
-		`Hold the phone, it's ${number}!`,
-		`Oh yeah, baby! It's ${number}!`,
-	]
+function generateResultMessage(number, phrases = RESULT_PHRASES) {
 	const randomIndex = Math.floor(Math.random() * phrases.length)
-	return phrases[randomIndex]
+	const message = phrases[randomIndex].replace('[LABEL]', number)
+
+	return message
 }

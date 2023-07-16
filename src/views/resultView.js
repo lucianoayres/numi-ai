@@ -1,49 +1,28 @@
 import {
-	INSTRUCTIONS_TEXT,
 	PREDICT_BUTTON_CLASS,
 	RESULT_CONTAINER_CLASS,
-	MENU_BUTTON_CLASS,
-	ABOUT_CONTAINER_CLASS,
-	ABOUT_CLOSE_BUTTON_CLASS,
-	GITHUB_BUTTON_CLASS,
-	GITHUB_LINK,
-} from './constants.js'
+} from '../constants/index.js'
 
 import {
-	setInstructionsText,
 	setDefaultPredictionText,
 	closeResultContainer,
-} from './utils.js'
+} from '../utils/index.js'
+
+const resultButton = document.querySelector(PREDICT_BUTTON_CLASS)
+const resultContainer = document.querySelector(RESULT_CONTAINER_CLASS)
 
 let swipeStartY = null
 let swipeEndY = null
 
-const resultButton = document.querySelector(PREDICT_BUTTON_CLASS)
-const resultContainer = document.querySelector(RESULT_CONTAINER_CLASS)
-const menuButton = document.querySelector(MENU_BUTTON_CLASS)
-const aboutContainer = document.querySelector(ABOUT_CONTAINER_CLASS)
-const aboutCloseButton = document.querySelector(ABOUT_CLOSE_BUTTON_CLASS)
-const gitHubButton = document.querySelector(GITHUB_BUTTON_CLASS)
-
-function init() {
+export function resultView() {
 	resultButton.addEventListener('click', handleResultButtonClick)
 	resultContainer.addEventListener('click', handleResultContainerClick)
-
-	menuButton.addEventListener('click', handleMenuButtonClick)
-	aboutCloseButton.addEventListener('click', handleAboutCloseButtonClick)
-	gitHubButton.addEventListener('click', handleGitHubButton)
-
 	resultContainer.addEventListener('mousedown', handleMouseDown, false)
 	resultContainer.addEventListener('mouseup', handleMouseUp, false)
 	resultContainer.addEventListener('touchstart', handleTouchStart, false)
 	resultContainer.addEventListener('touchend', handleTouchEnd, false)
 
-	setInstructionsText(INSTRUCTIONS_TEXT)
 	setDefaultPredictionText()
-}
-
-function handleGitHubButton() {
-	window.open(GITHUB_LINK)
 }
 
 function handleResultButtonClick(e) {
@@ -53,14 +32,6 @@ function handleResultButtonClick(e) {
 
 function handleResultContainerClick(e) {
 	closeResultContainer()
-}
-
-function handleMenuButtonClick() {
-	aboutContainer.style.display = 'block'
-}
-
-function handleAboutCloseButtonClick(e) {
-	aboutContainer.style.display = 'none'
 }
 
 function handleMouseDown(event) {
@@ -88,5 +59,3 @@ function checkSwipeDirection() {
 		closeResultContainer()
 	}
 }
-
-init()

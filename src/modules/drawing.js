@@ -5,7 +5,7 @@ import {
 	DRAWING_AREA_CLASS,
 	CLEAR_CANVAS_BUTTON_CLASS,
 	EXPORTED_IMAGE_PADDING,
-} from './constants.js'
+} from '../constants/index.js'
 
 import {
 	getPredictionResult,
@@ -13,7 +13,7 @@ import {
 	setDefaultPredictionText,
 	setLoadingPredictionText,
 	updateResult,
-} from './utils.js'
+} from '../utils/index.js'
 
 // Set the initial position for drawing
 let isDrawing = false

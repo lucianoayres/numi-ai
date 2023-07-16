@@ -1,5 +1,5 @@
-import { MODEL_PATH } from './constants.js'
-import { createCanvas } from './utils.js'
+import { MODEL_PATH } from '../constants/index.js'
+import { createCanvas } from '../utils/index.js'
 
 async function loadModel(modelPath) {
 	return tf.loadLayersModel(modelPath)

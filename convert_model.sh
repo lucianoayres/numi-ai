@@ -8,12 +8,16 @@
 # $ ./convert_model.sh
 
 # NOTE
-# Note: Before running the script, make sure you have TensorFlow.js and its dependencies 
-# installed and available in your environment.
+# Note: Before running the script, make sure you have python3 installed
+
+python3 -m venv myenv && 
+source myenv/bin/activate && 
+pip install --upgrade pip && 
+pip install tensorflowjs --upgrade
 
 # Set the input and output paths
-input_model_path="./data/tf-keras-model.h5"
-output_model_path="./converted-model"
+input_model_path="./model/tf-keras-model.h5"
+output_model_path="./src/data"
 
 # Run the TensorFlow.js converter
 tensorflowjs_converter --input_format=keras $input_model_path $output_model_path

@@ -18,7 +18,7 @@ NUMI AI is an interactive web application that allows you to draw single-digit n
 
 ## Model Training
 
-The NUMI AI model was trained using the MNIST dataset, which is the largest dataset of hand-drawn numbers in the world. The Python backend script used for training the model can be viewed on Google Colab. You can access the script [here](https://colab.research.google.com/[INSERT_COLAB_LINK]).
+The NUMI AI model was trained using the MNIST dataset, which is the largest dataset of hand-drawn numbers in the world. The Python backend script used for training the model can be viewed on Google Colab. You can access the script [here](https://colab.research.google.com/drive/1VbnsdVftu8n-4u-nGLdSLMFeJHlT9LPr?usp=sharing).
 
 ## Getting Started
 

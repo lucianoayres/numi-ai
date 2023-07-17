@@ -1,53 +1,58 @@
-# Image Classifier Proof of Concept using TensorFlow.js
+# NUMI AI - Single Digit Hand-drawn Number Recognition
 
-This is a proof-of-concept project that showcases an image classifier implemented using TensorFlow.js. The application enables users to upload an image that contains handwritten numbers, and it identifies the number while providing the corresponding probability of accuracy. The project utilizes the open source MNIST Dataset.
+NUMI AI is an interactive web application that allows you to draw single-digit numbers on a canvas and receive real-time predictions for the drawn digits. Powered by a Convolutional Neural Network (CNN), NUMI AI accurately recognizes hand-drawn numbers. With its user-friendly interface and responsive design, NUMI AI provides an intuitive and seamless experience across web and mobile devices.
 
-## Installation
+## Project Highlights
 
-To use this project, please follow these steps:
+- **Single Digit Number Recognition:** NUMI AI specializes in recognizing hand-drawn single-digit numbers, including fully rotated digits. Its CNN architecture ensures accurate predictions.
 
-1. Clone the repository to your local machine using the following command:
+- **Real-time Prediction:** As you draw a number, NUMI AI provides immediate predictions, offering a responsive and interactive user experience.
 
-   ```
-   git clone https://github.com/your-username/image-classifier.git
-   ```
+- **Cross-Device Compatibility:** NUMI AI supports a wide range of devices, including web browsers on desktop computers, laptops, tablets, and mobile phones.
 
-2. Install TensorFlow.js
+## Technologies Used
 
-3. Convert the TensorFlow Keras model from H5 to JSON format. Run the `convert_model.sh` script located in the project's root directory:
+- **Frontend**: The frontend of NUMI AI is built with Vanilla JavaScript, HTML, and CSS. It utilizes the TensorFlow.js library, enabling the integration of pre-trained machine learning models in the browser for real-time predictions.
 
-   ```
-   ./convert_model.sh
-   ```
+- **Backend**: The backend of NUMI AI is powered by Python and the TensorFlow library. Python provides a robust environment for model creation and training, while TensorFlow offers a comprehensive framework for developing and deploying machine learning models.
 
-   This script will use the `tensorflowjs_converter` tool to convert the `./data/tf-keras.h5` file to the JSON format and save it as `./converted-model/model.json`. Make sure you have TensorFlow.js installed, and the `tensorflowjs_converter` command is available in your environment.
+## Model Training
 
-## Usage
+The NUMI AI model was trained using the MNIST dataset, which is the largest dataset of hand-drawn numbers in the world. The Python backend script used for training the model can be viewed on Google Colab. You can access the script [here](https://colab.research.google.com/[INSERT_COLAB_LINK]).
 
-The project includes sample images that you can use to test the application. These images are located in the `./sample-images` folder. Please ensure that each image is in PNG format.
+## Getting Started
 
-To run the JavaScript code in the application, you need to run a local web server. This is necessary because certain web browsers enforce security restrictions that prevent JavaScript code from accessing local files directly.
+To set up and run NUMI AI locally, follow these steps:
 
-Here are the instructions to run a simple local web server with Python:
+1. **Data Conversion using Docker**:
 
-1. Open a terminal or command prompt and navigate to the project's root directory.
+   - Build the Docker image:
+     ```bash
+     docker build -t tensorflowjs-converter .
+     ```
+   - Run the Docker container with the image:
+     ```bash
+     docker run -v "${PWD}/model:/app/model" -v "${PWD}/src/data:/app/src/data" tensorflowjs-converter
+     ```
+     These commands will build the Docker image and execute the data conversion process.
 
-2. Run the following command:
-
-```
-python3 -m http.server
-```
-
-3. The server will start, and you can access the application by visiting http://localhost:8000 in your web browser.
-
-4. Click on the `Choose File` button to upload an image from the `./sample-images` folder or any other image that meets the requirements.
-
-5. Click the `Predict` button to process the uploaded image and display the predicted probability of the image containing a number.
+2. **Run the Application Locally**:
+   - Start a local web server with Python's Simple HTTP Server:
+     ```bash
+     python -m SimpleHTTPServer 5500
+     ```
+   - Access the application by navigating to `http://localhost:5500` or the specified local web server URL in your browser.
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+Contributions to NUMI AI are highly appreciated! If you encounter any issues, have suggestions for improvements, or would like to contribute code, please feel free to open an issue or submit a pull request on the project's GitHub repository.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+NUMI AI is released under the [MIT License](https://opensource.org/licenses/MIT), allowing you to use, modify, and distribute the code for both commercial and non-commercial purposes.
+
+## Acknowledgments
+
+We extend our gratitude to the open-source community and the contributors who made this project possible. Their dedication and efforts have played a vital role in shaping NUMI AI.
+
+If you have any questions or require further assistance, please don't hesitate to reach out. Enjoy using NUMI AI to recognize hand-drawn single-digit numbers!

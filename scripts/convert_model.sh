@@ -16,8 +16,9 @@ pip install --upgrade pip &&
 pip install tensorflowjs --upgrade
 
 # Set the input and output paths
-input_model_path="./model/tf-keras-model.h5"
-output_model_path="./src/data"
+
+input_model_path="model/tf-keras-model.h5"
+output_model_path="src/data"
 
 # Run the TensorFlow.js converter
 tensorflowjs_converter --input_format=keras $input_model_path $output_model_path

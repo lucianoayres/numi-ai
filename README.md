@@ -55,4 +55,4 @@ NUMI AI is released under the [MIT License](https://opensource.org/licenses/MIT)
 
 We extend our gratitude to the open-source community and the contributors who made this project possible. Their dedication and efforts have played a vital role in shaping NUMI AI.
 
-If you have any questions or require further assistance, please don't hesitate to reach out. Enjoy using NUMI AI to recognize hand-drawn single-digit numbers!
+If you have any questions or require further assistance, please don't hesitate to reach out.

@@ -1,8 +1,11 @@
-# NUMI AI - Single Digit Hand-drawn Number Recognition
+<p align="center"><img src="https://github.com/lucianoayres/numi-ai/assets/20209393/4de2d339-4edc-4b8e-8016-24e9555439e0" />
+</p>
 
-NUMI AI is an interactive web application that allows you to draw single-digit numbers on a canvas and receive real-time predictions for the drawn digits. Powered by a Convolutional Neural Network (CNN), NUMI AI accurately recognizes hand-drawn numbers. With its user-friendly interface and responsive design, NUMI AI provides an intuitive and seamless experience across web and mobile devices.
+<h2 align="center">NUMI - AI-Powered Hand-drawn Digit Recognition</h2>
 
-## Project Highlights
+`NUMI AI` is an interactive web application that allows you to draw single-digit numbers on a canvas and receive real-time predictions for the drawn digits. Powered by a [Convolutional Neural Network (CNN)](https://en.wikipedia.org/wiki/Convolutional_neural_network), NUMI AI accurately recognizes hand-drawn numbers.
+
+## Features
 
 - **Single Digit Number Recognition:** NUMI AI specializes in recognizing hand-drawn single-digit numbers, including fully rotated digits. Its CNN architecture ensures accurate predictions.
 
@@ -10,15 +13,23 @@ NUMI AI is an interactive web application that allows you to draw single-digit n
 
 - **Cross-Device Compatibility:** NUMI AI supports a wide range of devices, including web browsers on desktop computers, laptops, tablets, and mobile phones.
 
-## Technologies Used
+## Screenshots
 
-- **Frontend**: The frontend of NUMI AI is built with Vanilla JavaScript, HTML, and CSS. It utilizes the TensorFlow.js library, enabling the integration of pre-trained machine learning models in the browser for real-time predictions.
-
-- **Backend**: The backend of NUMI AI is powered by Python and the TensorFlow library. Python provides a robust environment for model creation and training, while TensorFlow offers a comprehensive framework for developing and deploying machine learning models.
+![numi-ai-demo](https://github.com/lucianoayres/numi-ai/assets/20209393/0b963f92-1aa3-41da-ae81-59d97e74f6f3)
 
 ## Model Training
 
-The NUMI AI model was trained using the MNIST dataset, which is the largest dataset of hand-drawn numbers in the world. The Python backend script used for training the model can be viewed on Google Colab. You can access the script [here](https://colab.research.google.com/drive/1VbnsdVftu8n-4u-nGLdSLMFeJHlT9LPr?usp=sharing).
+The NUMI AI model was trained using the MNIST dataset, which is the largest dataset of hand-drawn numbers in the world. The Python backend script used for training the model can be [viewed on Google Colab](https://colab.research.google.com/drive/1VbnsdVftu8n-4u-nGLdSLMFeJHlT9LPr?usp=sharing).
+
+## Technologies Used
+
+* **Frontend**:
+   * Vanilla JavaScript, HTML, and CSS
+   * [TensorFlow.js](https://#) library  (for integrating pre-trained machine learning models in the browser for real-time predictions)
+
+* **Backend**:
+   * Python (for model creation and training)
+   * TensorFlow library  (for developing and deploying machine learning models)
 
 ## Getting Started
 
@@ -42,6 +53,9 @@ To set up and run NUMI AI locally, follow these steps:
      python -m SimpleHTTPServer 5500
      ```
    - Access the application by navigating to `http://localhost:5500` or the specified local web server URL in your browser.
+
+## Design Assets
+The logo and prototype design assets created for the project can be [accessed on Figma]([https://www.figma.com/file/qCDHbXLVQoG7QHLCfbtRcG/NUMI-AI-Prototype?type=design&node-id=0%3A1&mode=design&t=4JJfUqlPXEcaXueT-1](https://www.figma.com/file/qCDHbXLVQoG7QHLCfbtRcG/NUMI-AI-Prototype?type=design&node-id=0%3A1&mode=design&t=4JJfUqlPXEcaXueT-1)).
 
 ## Contributing
 

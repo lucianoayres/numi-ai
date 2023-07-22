@@ -25,11 +25,11 @@ The NUMI AI model was trained using the MNIST dataset, which is the largest data
 
 * **Frontend**:
    * Vanilla JavaScript, HTML, and CSS
-   * [TensorFlow.js](https://#) library  (for integrating pre-trained machine learning models in the browser for real-time predictions)
+   * [TensorFlow.js](https://www.tensorflow.org/js) library  (for integrating pre-trained machine learning models in the browser for real-time predictions)
 
 * **Backend**:
    * Python (for model creation and training)
-   * TensorFlow library  (for developing and deploying machine learning models)
+   * [TensorFlow](https://tensorflow.org/) library (for developing and deploying machine learning models)
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ To set up and run NUMI AI locally, follow these steps:
    - Access the application by navigating to `http://localhost:5500` or the specified local web server URL in your browser.
 
 ## Design Assets
-The logo and prototype design assets created for the project can be [accessed on Figma]([https://www.figma.com/file/qCDHbXLVQoG7QHLCfbtRcG/NUMI-AI-Prototype?type=design&node-id=0%3A1&mode=design&t=4JJfUqlPXEcaXueT-1](https://www.figma.com/file/qCDHbXLVQoG7QHLCfbtRcG/NUMI-AI-Prototype?type=design&node-id=0%3A1&mode=design&t=4JJfUqlPXEcaXueT-1)).
+The logo and prototype design assets created for the project can be [accessed on Figma](https://www.figma.com/file/qCDHbXLVQoG7QHLCfbtRcG/NUMI-AI-Prototype?type=design&node-id=0%3A1&mode=design&t=4JJfUqlPXEcaXueT-1).
 
 ## Contributing
 

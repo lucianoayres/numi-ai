@@ -3,7 +3,7 @@ name: Copy Files to Root
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   copy-files:

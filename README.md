@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/lucianoayres/numi-ai/assets/20209393/4de2d339-4edc-4b8e-8016-24e9555439e0" />
+<p align="center"><img src="https://github.com/lucianoayres/numi-ai/assets/20209393/65a4c41b-0ba5-4471-a9b9-e850ea98bc8c" />
 </p>
 
 <h2 align="center">NUMI - AI-Powered Hand-drawn Digit Recognition</h2>
@@ -15,7 +15,7 @@
 
 ## Screenshots
 
-![numi-ai-demo](https://github.com/lucianoayres/numi-ai/assets/20209393/0b963f92-1aa3-41da-ae81-59d97e74f6f3)
+![numi-ai-demo](https://github.com/lucianoayres/numi-ai/assets/20209393/09de9c48-0804-41f4-9015-e768f87da36b)
 
 ## Model Training
 

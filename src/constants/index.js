@@ -3,7 +3,7 @@ export const MODEL_PATH = './data/model.json'
 
 // Project GitHub link
 export const GITHUB_BUTTON_CLASS = '.about-container__github-button'
-export const GITHUB_LINK = 'https://github.com/lucianoayres'
+export const GITHUB_LINK = 'https://github.com/lucianoayres/numi-ai'
 
 // Set up drawing style constants
 export const STROKE_STYLE = '#FFFFFF'

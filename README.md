@@ -30,6 +30,7 @@ The NUMI AI model was trained using the MNIST dataset, which is the largest data
 * **Backend**:
    * Python (for model creation and training)
    * [TensorFlow](https://tensorflow.org/) library (for developing and deploying machine learning models)
+   * Docker
 
 ## Getting Started
 
